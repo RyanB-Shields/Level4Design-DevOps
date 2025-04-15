@@ -1,0 +1,15 @@
+{
+  "name": "ryandb_node_sql_app",
+  "version": "1.0.0",
+  "description": "A Node app using mysql2",
+  "author":"Ryan B-Shields",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "cors": "^2.8.5",
+    "mysql2": "^2.3.0"
+  }
+}
