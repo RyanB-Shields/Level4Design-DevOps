@@ -1,0 +1,137 @@
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        15/04/2025     11:55                myApp
+
+
+PS C:\Users\Admin> cd myApp
+PS C:\Users\Admin\myApp>npm init -y
+Wrote to C:\Users\Admin\myApp\package.json:
+
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+
+PS C:\Users\Admin\myApp> code .
+PS C:\Users\Admin\myApp> npm install express mysql2 body-parser cors
+
+added 79 packages, and audited 80 packages in 5s
+
+15 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\Users\Admin\myApp> docker run --name mysql -e MYSQL_ROOT_PASSWORD=password12
+"docker run" requires at least 1 argument.
+See 'docker run --help'.
+
+Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Create and run a new container from an image
+PS C:\Users\Admin\myApp> docker run --name mysql -e MYSQL_ROOT_PASSWORD=password123 -p 3306:3306 -d mysql:latest
+Unable to find image 'mysql:latest' locally
+latest: Pulling from library/mysql
+cea172a6e83b: Pull complete
+fa811e9a869e: Pull complete
+47a2982daa21: Pull complete
+PS C:\Users\Admin\myApp> docker exec -it mysql mysgl -uroot -p
+OCI runtime exec failed: exec failed: unable to start container process: exec: "mysgl": executable file not found in $PATH: unknown
+
+What's next?
+  Try Docker Debug for seamless, persistent debugging tools in any container or image → docker debug mysql
+  Learn more at https://docs.docker.com/go/debug-cli/--------------------------XXPS C:\Users\Admin\myApp> docker exec
+
+
+
+
+
+
+
+
+
+
+docker exec -it mysql mysql -uroot -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 9.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>CREATE DATABASE ryandb;
+Query OK, 1 row affected (0.058 sec)
+
+mysql>USE ryandb;
+Database changed
+mysql>CREATE users(id INT AUTO_INCREMENT PRIMARY KEY,username VARCHAR(50) NOT
+NULL, email VARCHAR(100) NOT NULL);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'users(id INT AUTO_INCREMENT PRIMARY KEY,username VARCHAR(50) NOTNULL, email VARC' at line 1
+mysql>CREATE TABLE users (id INT AUTO_INCREMENT PRIMARY KEY,username VARCHAR(50) NOT NULL,email VARCHAR(100) NOT NULL);
+Query OK, 0 rows affected (0.123 sec)
+
+mysql>INSERT INTO users(username, email) VALUES('Dr Who','TheDr@thetardis.com')
+    ->SELECT * FROM users;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT * FROM users' at line 2
+mysql>INSERT INTO users(username, email) VALUES('Dr Who','TheDr@thetardis.com');
+Query OK, 1 row affected (0.052 sec)
+
+1 row in set (0.003 sec)
+
+mysql> exit
+Bye
+
+What's next?
+  Try Docker Debug for seamless, persistent debugging tools in any container or image → docker debug mysql
+  Learn more at https://docs.docker.com/go/debug-cli/
+PS C:\Users\Admin\myApp> docker inspect mysql | findstr IPAddress
+            "SecondaryIPAddresses": null,
+            "IPAddress": "172.17.0.2",
+                    "IPAddress": "172.17.0.2",---------------------------------XXPS C:\Users\Admin\myApp>
+
+
+
+
+
+^C
+PS C:\Users\Admin\myApp> docker build . -t ryanbshields/ryanbd-node-sql-app
+[+] Building 0.0s (0/0)  docker:default
+2025/04/15 13:42:36 http2: server: error reading preface from client //./pipe/[+] Building 12.5s (11/11) FINISHED                            docker:default
+ => [internal] load build definition from Dockerfile                     0.1s
+ => => transferring dockerfile: 248B                                     0.1s 
+ => [internal] load metadata for docker.io/library/node:16               1.2s
+ => [auth] library/node:pull token for registry-1.docker.io              0.0s
+ => [internal] load .dockerignore                                        0.1s
+ => => transferring context: 67B                                         0.0s 
+ => [internal] load build context                                        0.2s
+ => => transferring context: 33.23kB                                     0.1s 
+ => [1/5] FROM docker.io/library/node:16@sha256:f77a1aef2da8d83e45ec990  0.0s 
+ => CACHED [2/5] WORKDIR /usr/src/app                                    0.0s
+ => [3/5] COPY package*.json ./                                          0.3s 
+ => [4/5] RUN npm install                                                9.3s
+ => [5/5] COPY . .                                                       0.2s
+ => exporting to image                                                   0.8s
+ => => exporting layers                                                  0.6s
+ => => writing image sha256:c2f0a608625e0e2509c668b34b7b80bbd320d5b3762  0.0s
+ => => naming to docker.io/ryanbshields/ryanbd-node-sql-app              0.0s
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+PS C:\Users\Admin\myApp> docker run -p 3000:3000 ryanbshields/ryanbd-node-sql-app
+Server is running on port 3000
