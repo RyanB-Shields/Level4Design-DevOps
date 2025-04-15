@@ -1,0 +1,13 @@
+{
+  "name": "docker_app",
+  "version": "1.0.0",
+  "descripiton": "A Node app using Docker",
+  "author": "Ryan Bougton-Shileds <ryan.boughton-shields@worldine.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
