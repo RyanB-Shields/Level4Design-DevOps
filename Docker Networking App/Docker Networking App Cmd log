@@ -1,0 +1,229 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\Admin> mkdir docker-networking
+
+
+    Directory: C:\Users\Admin
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        15/04/2025     14:00                docker-networking
+
+
+PS C:\Users\Admin> cd .\docker-networking\
+PS C:\Users\Admin\docker-networking> mkdir order-service
+
+
+    Directory: C:\Users\Admin\docker-networking
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        15/04/2025     14:00                order-service
+
+
+PS C:\Users\Admin\docker-networking>mkdir product-service
+
+
+    Directory: C:\Users\Admin\docker-networking
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        15/04/2025     14:00                product-service
+
+
+PS C:\Users\Admin\docker-networking>mkdir user-service   
+
+
+    Directory: C:\Users\Admin\docker-networking
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        15/04/2025     14:01                user-service
+
+
+PS C:\Users\Admin\docker-networking>cd order-service     
+PS C:\Users\Admin\docker-networking\order-service> npm init -y
+Wrote to C:\Users\Admin\docker-networking\order-service\package.json:
+
+{
+  "name": "order-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+
+PS C:\Users\Admin\docker-networking\order-service> cd ..
+PS C:\Users\Admin\docker-networking>cd .\product-service\
+PS C:\Users\Admin\docker-networking\product-service> npm init -y
+Wrote to C:\Users\Admin\docker-networking\product-service\package.json:
+
+{
+  "name": "product-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+
+PS C:\Users\Admin\docker-networking\product-service> cd ..
+PS C:\Users\Admin\docker-networking>cd .\user-service\
+PS C:\Users\Admin\docker-networking\user-service> npm init -y
+Wrote to C:\Users\Admin\docker-networking\user-service\package.json:
+  "description": ""
+}
+
+
+
+PS C:\Users\Admin\docker-networking\user-service> cd ..
+PS C:\Users\Admin\docker-networking> code .
+PS C:\Users\Admin\docker-networking> docker network create ecommerce-network
+8a1f13cd9ff2d686cf3b76a10c0d5c49ec4769176a223a8010a48e6a1c8ed94f
+PS C:\Users\Admin\docker-networking> cd .\product-service\
+PS C:\Users\Admin\docker-networking\product-service> docker build -t product-service .
+[+] Building 150.4s (11/11) FINISHED                           docker:default
+ => [internal] load build definition from Dockerfile                     0.1s
+ => => transferring dockerfile: 438B                                     0.1s
+ => [internal] load metadata for docker.io/library/node:14               2.2s
+ => [auth] library/node:pull token for registry-1.docker.io              0.0s
+ => [internal] load .dockerignore                                        0.1s
+ => => transferring context: 2B                                          0.0s
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c  139.0s
+ => => resolve docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c  0.1s 
+ => => sha256:2cafa3fbb0b6529ee4726b4f599ec27ee557ea3de 2.21kB / 2.21kB  0.0s 
+ => => sha256:1d12470fa662a2a5cb50378dcdc8ea228c1735747 7.51kB / 7.51kB  0.0s 
+ => => sha256:a158d3b9b4e3fa813fa6c8c590b8f0a860e015ad4e59b 776B / 776B  0.0s
+ => => sha256:b253aeafeaa7e0671bb60008df01de101a38a045f 7.86MB / 7.86MB  4.9s 
+ => => sha256:2ff1d7c41c74a25258bfa6f0b8adb0a727f845 50.45MB / 50.45MB  30.3s
+ => => sha256:3d2201bd995cccf12851a50820de03d34a17011 10.00MB / 10.00MB  7.8s 
+ => => sha256:1de76e268b103d05fa8960e0f77951ff54b912 51.88MB / 51.88MB  40.0s 
+ => => sha256:d9a8df5894511ce28a05e2925a75e8a4acbd 191.85MB / 191.85MB  61.3s
+ => => sha256:6f51ee005deac0d99898e41b8ce60ebf250ebe1a 4.19kB / 4.19kB  32.1s
+ => => extracting sha256:2ff1d7c41c74a25258bfa6f0b8adb0a727f84518f55f6  37.1s
+ => => sha256:5f32ed3c3f278edda4fc571c880b5277355a29 35.24MB / 35.24MB  48.2s
+ => => sha256:0c8cc2f24a4dcb64e602e086fc9446b0a541e8ac 2.29MB / 2.29MB  45.0s
+ => => sha256:0d27a8e861329007574c6766fba946d48e20d2c8e964 450B / 450B  45.5s 
+ => => extracting sha256:b253aeafeaa7e0671bb60008df01de101a38a045ff7bc6  1.6s 
+ => => extracting sha256:3d2201bd995cccf12851a50820de03d34a17011dcbb9ac  1.2s 
+ => => extracting sha256:1de76e268b103d05fa8960e0f77951ff54b912b63429c  13.6s 
+ => => extracting sha256:d9a8df5894511ce28a05e2925a75e8a4acbd0634c39ad  37.8s 
+ => => extracting sha256:6f51ee005deac0d99898e41b8ce60ebf250ebe1a31a0b0  0.0s 
+ => => extracting sha256:5f32ed3c3f278edda4fc571c880b5277355a29ae8f52b  11.3s 
+ => => extracting sha256:0c8cc2f24a4dcb64e602e086fc9446b0a541e8acd9ad72  0.4s 
+ => => extracting sha256:0d27a8e861329007574c6766fba946d48e20d2c8e964e8  0.0s 
+ => [internal] load build context                                        0.2s 
+ => => transferring context: 1.65kB                                      0.1s 
+ => [2/5] WORKDIR /app                                                   0.4s 
+ => [3/5] COPY package*.json ./                                          0.2s 
+ => [4/5] RUN npm install                                                7.2s 
+ => [5/5] COPY . .                                                       0.1s 
+ => exporting to image                                                   0.6s 
+ => => exporting layers                                                  0.5s 
+ => => writing image sha256:27a20700399d135feec81582d05527c900ddf19f253  0.0s 
+ => => naming to docker.io/library/product-service                       0.0s 
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+PS C:\Users\Admin\docker-networking\product-service> cd ..\order-service\
+PS C:\Users\Admin\docker-networking\order-service> docker build -t order-service .  
+[+] Building 8.1s (10/10) FINISHED                             docker:default
+ => [internal] load build definition from Dockerfile                     0.1s
+ => => transferring dockerfile: 438B                                     0.1s 
+ => [internal] load metadata for docker.io/library/node:14               0.5s 
+ => [internal] load .dockerignore                                        0.1s
+ => => transferring context: 2B                                          0.1s 
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c  0.0s
+ => [internal] load build context                                        0.3s 
+ => => transferring context: 1.52kB                                      0.2s 
+ => CACHED [2/5] WORKDIR /app                                            0.0s
+ => [3/5] COPY package*.json ./                                          0.1s 
+ => [4/5] RUN npm install                                                6.1s
+ => [5/5] COPY . .                                                       0.1s
+ => exporting to image                                                   0.6s
+ => => exporting layers                                                  0.5s
+ => => writing image sha256:e729bdb97437723d0ca1f96286d13d59c4d9fd05cd9  0.0s
+ => => naming to docker.io/library/order-service                         0.0s
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+PS C:\Users\Admin\docker-networking\order-service> cd ..\user-service\
+PS C:\Users\Admin\docker-networking\user-service> docker build -t user-service . 
+[+] Building 11.0s (11/11) FINISHED                            docker:default
+ => [internal] load build definition from Dockerfile                     0.0s
+ => => transferring dockerfile: 438B                                     0.0s 
+ => [internal] load metadata for docker.io/library/node:14               1.2s 
+ => [auth] library/node:pull token for registry-1.docker.io              0.0s
+ => [internal] load .dockerignore                                        0.1s
+ => => transferring context: 2B                                          0.0s 
+ => [1/5] FROM docker.io/library/node:14@sha256:a158d3b9b4e3fa813fa6c8c  0.0s
+ => [internal] load build context                                        0.3s 
+ => => transferring context: 1.57kB                                      0.2s 
+ => CACHED [2/5] WORKDIR /app                                            0.0s
+ => [3/5] COPY package*.json ./                                          0.3s 
+ => [4/5] RUN npm install                                                7.6s
+ => [5/5] COPY . .                                                       0.3s
+ => exporting to image                                                   0.7s
+ => => exporting layers                                                  0.5s
+ => => writing image sha256:3ea28587f322182faa8917fe88201cd939dcf516589  0.0s
+ => => naming to docker.io/library/user-service                          0.0s
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+PS C:\Users\Admin\docker-networking\user-service> docker run -d --name iser-service --network ecommerce-network user-service
+1da3703a023c276ea6ca0b66a7bd16b38cda75e21d02084c48e6104c2f70dcb4
+PS C:\Users\Admin\docker-networking\user-service> cd ..\order-service\        PS C:\Users\Admin\docker-networking\order-service> docker run -d --name order-service --network ecommerce-network order-service
+3f22b41d1564760b831bc5c0d8b614e3bbde3c7fc6eaf3d1b3fdbca29af64ced
+PS C:\Users\Admin\docker-networking\order-service> cd ..\product-service\
+PS C:\Users\Admin\docker-networking\product-service> docker run -d --name product-service --network ecommerce-network product-service
+416a2cbb5a5c76291a7370cb34e63a371be2a622894c23c5a91be043aeb8a334
+PS C:\Users\Admin\docker-networking\product-service> cd ..
+PS C:\Users\Admin\docker-networking> docker start product-service
+product-service
+PS C:\Users\Admin\docker-networking> docker start order-service  
+order-service
+PS C:\Users\Admin\docker-networking> docker start user-service 
+Error response from daemon: No such container: user-service
+Error: failed to start containers: user-service
+PS C:\Users\Admin\docker-networking> docker start user-service
+Error response from daemon: No such container: user-service
+Error: failed to start containers: user-service
+PS C:\Users\Admin\docker-networking> cd .\user-service\ 
+PS C:\Users\Admin\docker-networking\user-service>docker run -d --name user-service --network ecommerce-network user-service      
+e237f22f0d5c921094a3a9cf344062a4cbe1844cb1073212afb877281f0eb23e
+PS C:\Users\Admin\docker-networking\user-service> cd ..
+PS C:\Users\Admin\docker-networking> docker start user-service                user-service
+PS C:\Users\Admin\docker-networking> curl http://product-service:3000/products
+
+curl : The remote name could not be resolved: 'product-service'
+At line:1 char:1
++ curl http://product-service:3000/products
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:H  
+   ttpWebRequest) [Invoke-WebRequest], WebException
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerS  
+   hell.Commands.InvokeWebRequestCommand
+
+PS C:\Users\Admin\docker-networking> docker exec -it user-service bash
+root@e237f22f0d5c:/app# curl http://product-service:3000/products
+[{"id":1,"name":"Product 1","price":10.99},{"id":2,"name":"Product 2","price":20.49},{"id":3,"name":"Product 3","price":15.99}]root@e237f22f0d5c:/app#      
