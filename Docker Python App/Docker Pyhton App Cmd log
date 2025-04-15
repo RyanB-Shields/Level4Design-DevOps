@@ -1,0 +1,198 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\Admin>mkdir python-docker
+
+
+    Directory: C:\Users\Admin
+
+
+Mode                 LastWriteTime         Length Name
+[+] Building 142.7s (9/9) FINISHED                             docker:default 
+ => [internal] load build definition from Dockerfile                     0.1s 
+ => => transferring dockerfile: 435B                                     0.0s 
+ => [internal] load metadata for docker.io/library/python:3.7            1.8s 
+ => [internal] load .dockerignore                                        0.0s 
+ => => transferring context: 2B                                          0.0s 
+ => [1/4] FROM docker.io/library/python:3.7@sha256:eedf63967cdb57d821  130.4s 
+ => => resolve docker.io/library/python:3.7@sha256:eedf63967cdb57d8214d  0.1s 
+ => => sha256:2011a37d2a08fe83dd9ff923e0f83bfd7290152e2 2.01kB / 2.01kB  0.0s  => => sha256:167b8a53ca4504bc6aa3182e336fa96f4ef768 49.56MB / 49.56MB  14.2s 
+ => => sha256:b47a222d28fa95680198398973d0a29b82a968f 24.03MB / 24.03MB  7.5s 
+ => => sha256:eedf63967cdb57d8214db38ce21f105003ed4e4d0 1.86kB / 1.86kB  0.0s 
+ => => sha256:16d93ae3411be3db255b6b52fdfc155a0dff0f697 8.13kB / 8.13kB  0.0s 
+ => => sha256:debce5f9f3a9709885f7f2ad3cf41f036a3b57 64.11MB / 64.11MB  32.5s 
+ => => sha256:1d7ca7cd2e066ae77ac6284a9d027f72a31a 211.04MB / 211.04MB  73.8s 
+ => => sha256:ff3119008f58beef8f336fa833707b0fe914db94 6.39MB / 6.39MB  19.1s 
+ => => extracting sha256:167b8a53ca4504bc6aa3182e336fa96f4ef76875d158c  33.2s 
+ => => sha256:c2423a76a32b7ffb2ee7bb6d1e0c74bb181123 14.70MB / 14.70MB  28.8s
+ => => sha256:e1c98ca4926a91839805ce76d76a70225e303007331e 244B / 244B  29.5s
+ => => sha256:3b62c8e1d79b6554a8bffcf196ff5dd822858c17 2.85MB / 2.85MB  32.7s
+ => => extracting sha256:b47a222d28fa95680198398973d0a29b82a968f03e7ef3  7.4s 
+ => => extracting sha256:debce5f9f3a9709885f7f2ad3cf41f036a3b57b406b27  24.4s 
+ => => extracting sha256:1d7ca7cd2e066ae77ac6284a9d027f72a31a02a18bfc2  39.2s 
+ => => extracting sha256:ff3119008f58beef8f336fa833707b0fe914db94ca6b7b  2.0s 
+ => => extracting sha256:c2423a76a32b7ffb2ee7bb6d1e0c74bb1811237eddcb32  2.8s 
+ => => extracting sha256:e1c98ca4926a91839805ce76d76a70225e303007331ee6  0.0s 
+ => => extracting sha256:3b62c8e1d79b6554a8bffcf196ff5dd822858c179f1f8d  1.4s 
+ => [internal] load build context                                        0.1s 
+ => => transferring context: 248B                                        0.1s 
+ => [2/4] WORKDIR /coolApp                                               0.4s 
+ => [3/4] RUN pip install flask                                          8.8s 
+ => [4/4] COPY coolApp.py .                                              0.1s 
+ => exporting to image                                                   0.6s 
+ => => exporting layers                                                  0.5s
+ => => writing image sha256:288da5ef979335419811df21c2724cf829f6c496391  0.0s 
+ => => naming to docker.io/library/coolapp                               0.0s 
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+PS C:\Users\Admin\python-docker> docker tag coolappryan/coolapp
+"docker tag" requires exactly 2 arguments.
+See 'docker tag --help'.
+
+Usage:  docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
+Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+PS C:\Users\Admin\python-docker> docker tag coolapp ryan/coolapp
+PS C:\Users\Admin\python-docker> docker push ryan/coolapp
+Using default tag: latest
+The push refers to repository [docker.io/ryan/coolapp]
+53bfd8c6d460: Preparing                                                       
+45ba290351ab: Preparing                                                       
+fdb53c715100: Preparing                                                       
+45c430b35dba: Preparing                                                       
+8e23f007f16f: Preparing                                                       
+aef22e07d5d7: Waiting                                                         
+c26432533a6a: Waiting                                                         
+01d6cdeac539: Waiting                                                         
+a981dddd4c65: Waiting                                                         
+f6589095d5b5: Waiting                                                         
+7c85cfa30cb1: Waiting                                                         
+denied: requested access to the resource is denied
+PS C:\Users\Admin\python-docker> docker login       
+Log in with your Docker ID or email address to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com/ to create one.
+You can log in with your password or a Personal Access Token (PAT). Using a limited-scope PAT grants better security and is required for organizations using SSO. Learn more at https://docs.docker.com/go/access-tokens/
+
+Username:ryanbshields
+Password:
+Login Succeeded
+PS C:\Users\Admin\python-docker> docker push ryan/coolapp
+Using default tag: latest
+The push refers to repository [docker.io/ryan/coolapp]
+53bfd8c6d460: Preparing                                                       
+45ba290351ab: Preparing                                                       
+fdb53c715100: Preparing                                                       
+45c430b35dba: Preparing                                                       
+8e23f007f16f: Preparing                                                       
+aef22e07d5d7: Waiting                                                         
+c26432533a6a: Waiting                                                         
+01d6cdeac539: Waiting                                                         
+a981dddd4c65: Waiting                                                         
+f6589095d5b5: Waiting                                                         
+7c85cfa30cb1: Waiting                                                         
+denied: requested access to the resource is denied
+PS C:\Users\Admin\python-docker> docker tag coolapp ryanbshields/coolapp
+PS C:\Users\Admin\python-docker> docker push ryanbshields/coolapp
+Using default tag: latest
+The push refers to repository [docker.io/ryanbshields/coolapp]
+53bfd8c6d460: Pushed
+45ba290351ab: Pushed
+fdb53c715100: Pushed
+45c430b35dba: Pushed
+8e23f007f16f: Pushed
+aef22e07d5d7: Pushed
+c26432533a6a: Pushed
+01d6cdeac539: Pushed
+a981dddd4c65: Pushed
+f6589095d5b5: Pushed
+7c85cfa30cb1: Pushed
+latest: digest: sha256:9de0797cdcdce573a3222356e620277d3c0c812fe0ce1a1ae2989c7d37d0ed0b size: 2631
+PS C:\Users\Admin\python-docker> docker run -d -p 5001:5000 --name coolAppContainer coolapp
+6bb4db4ca6b7adae6a609ef49c832428952899bee693dec37791e49e23f30352
+PS C:\Users\Admin\python-docker> docker build -t coolapp              ERROR: "docker buildx build" requires exactly 1 argument.
+See 'docker buildx build --help'.
+
+Usage:  docker buildx build [OPTIONS] PATH | URL | -
+
+Start a build
+PS C:\Users\Admin\python-docker> docker build -t coolapp .
+2025/04/15 11:29:24 http2: server: error reading preface from client //./pipe/docker_engine: file has already been closed
+[+] Building 0.0s (0/0)  docker:default
+2025/04/15 11:29:25 http2: server: error reading preface from client //./pipe/[+] Building 2.0s (10/10) FINISHED                             docker:default
+ => [internal] load build definition from Dockerfile                     0.1s
+ => => transferring dockerfile: 435B                                     0.0s 
+ => [internal] load metadata for docker.io/library/python:3.7            1.0s 
+ => [auth] library/python:pull token for registry-1.docker.io            0.0s
+ => [internal] load .dockerignore                                        0.0s
+ => => transferring context: 2B                                          0.0s 
+ => [1/4] FROM docker.io/library/python:3.7@sha256:eedf63967cdb57d8214d  0.0s
+ => [internal] load build context                                        0.2s 
+ => => transferring context: 247B                                        0.1s 
+ => CACHED [2/4] WORKDIR /coolApp                                        0.0s
+ => CACHED [3/4] RUN pip install flask                                   0.0s 
+ => [4/4] COPY coolApp.py .                                              0.2s 
+ => exporting to image                                                   0.3s
+ => => exporting layers                                                  0.2s 
+ => => writing image sha256:eeee7f6c29ed5b2b4faf4dc4ffa7089d425f200d55d  0.0s 
+ => => naming to docker.io/library/coolapp                               0.0s
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+PS C:\Users\Admin\python-docker> docker tag coolapp ryanbshields/coolapp      PS C:\Users\Admin\python-docker> docker push ryanbshields/coolapp             Using default tag: latest
+The push refers to repository [docker.io/ryanbshields/coolapp]
+cd680ea9f012: Pushed
+45ba290351ab: Layer already exists
+fdb53c715100: Layer already exists
+45c430b35dba: Layer already exists
+8e23f007f16f: Layer already exists
+aef22e07d5d7: Layer already exists
+c26432533a6a: Layer already exists
+01d6cdeac539: Layer already exists
+a981dddd4c65: Layer already exists
+f6589095d5b5: Layer already exists
+7c85cfa30cb1: Layer already exists
+latest: digest: sha256:7c604942bcfd2d39164729a19c2347ac6bc0ed41744b0fd8dd8cc87d3a09769e size: 2631
+PS C:\Users\Admin\python-docker> docker run -d -p 5001:5000 --name coolAppContainer coolapp
+docker: Error response from daemon: Conflict. The container name "/coolAppContainer" is already in use by container "6bb4db4ca6b7adae6a609ef49c832428952899bee693dec37791e49e23f30352". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+PS C:\Users\Admin\python-docker> docker run -d -p 5001:5000 --name coolAppContainerv2 coolapp
+cb9ce37cf3f15b80ee42c4be6113dad64efe331463d695a19f056dad8f20f6ad
+docker: Error response from daemon: driver failed programming external connectivity on endpoint coolAppContainerv2 (864ec41d6aea3521e3f5d6f416261226bebc9170af0e61df9fb1c766c2bd4d7a): Bind for 0.0.0.0:5001 failed: port is already allocated.
+PS C:\Users\Admin\python-docker> docker run -d -p 5002:5000 --name coolAppContainerv2 coolapp
+docker: Error response from daemon: Conflict. The container name "/coolAppContainerv2" is already in use by container "cb9ce37cf3f15b80ee42c4be6113dad64efe331463d695a19f056dad8f20f6ad". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+PS C:\Users\Admin\python-docker> docker run -d -p 5002:5000 --name coolAppContainerv2.1 coolapp
+524feb06c9ae524b5281e6fe06bf25c546d41d319d8b33109ad1caf782dd7ed6
+PS C:\Users\Admin\python-docker> docker stop
+"docker stop" requires at least 1 argument.
+See 'docker stop --help'.
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containers
+PS C:\Users\Admin\python-docker> docker stop coolAppContainer    
+coolAppContainer
+PS C:\Users\Admin\python-docker> docker build -t coolapp .      [+] Building 0.0s (0/0)  docker:default
+2025/04/15 11:32:54 http2: server: error reading preface from client //./pipe/[+] Building 1.6s (9/9) FINISHED                               docker:default
+ => [internal] load build definition from Dockerfile                     0.1s
+ => => transferring dockerfile: 435B                                     0.0s 
+ => [internal] load metadata for docker.io/library/python:3.7            0.6s 
+ => [internal] load .dockerignore                                        0.0s
+ => => transferring context: 2B                                          0.0s 
+ => [1/4] FROM docker.io/library/python:3.7@sha256:eedf63967cdb57d8214d  0.0s
+ => [internal] load build context                                        0.1s 
+ => => transferring context: 261B                                        0.1s
+ => CACHED [2/4] WORKDIR /coolApp                                        0.0s
+ => CACHED [3/4] RUN pip install flask                                   0.0s 
+ => [4/4] COPY coolApp.py .                                              0.1s 
+ => exporting to image                                                   0.3s
+ => => exporting layers                                                  0.1s 
+ => => writing image sha256:74b361f63c2fcb961bdaff01b01ea8cd355f70507d4  0.0s
+ => => naming to docker.io/library/coolapp                               0.0s 
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+PS C:\Users\Admin\python-docker> docker run -d -p 5001:5000 coolapp           88adef4a5a14691bc72759329ad5a002b16ebb1076b90fd15038fd29de8a9342
+PS C:\Users\Admin\python-docker> 
