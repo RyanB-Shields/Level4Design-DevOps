@@ -1,0 +1,192 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\Admin>mkdir docker_app
+
+
+    Directory: C:\Users\Admin
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        15/04/2025     10:01                docker_app
+
+
+PS C:\Users\Admin> cd docker_app   
+PS C:\Users\Admin\docker_app> npm init -y
+Wrote to C:\Users\Admin\docker_app\package.json:
+
+{
+  "name": "docker_app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
+
+
+
+PS C:\Users\Admin\docker_app> code .
+PS C:\Users\Admin\docker_app> npm install
+
+added 69 packages, and audited 70 packages in 4s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\Users\Admin\docker_app> npm start
+
+> docker_app@1.0.0 start
+> node server.js
+
+Running on http://${HOST}:${PORT}
+PS C:\Users\Admin\docker_app> npm install
+
+up to date, audited 70 packages in 2s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\Users\Admin\docker_app> npm install
+
+up to date, audited 70 packages in 2s
+
+14 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\Users\Admin\docker_app> npm start  
+
+> docker_app@1.0.0 start
+> node server.js
+
+Running on http://0.0.0.0:9000
+PS C:\Users\Admin\docker_app> npm start
+
+> docker_app@1.0.0 start
+> node server.js
+
+Running on http://0.0.0.0:9000
+PS C:\Users\Admin\docker_app> docker build . -t ryan/docker-node-app
+[+] Building 0.0s (0/0)  docker:default
+2025/04/15 10:28:11 http2: server: error reading preface from client //./pipe/[+] Building 125.1s (8/9)                                      docker:default
+ => [internal] load build definition from Dockerfile                     0.3s
+ => => transferring dockerfile: 309B                                     0.1s 
+ => [internal] load metadata for docker.io/library/node:16               2.2s
+ => [internal] load .dockerignore                                        0.1s
+ => => transferring context: 67B                                         0.0s 
+ => [1/5] FROM docker.io/library/node:16@sha256:f77a1aef2da8d83e45ec9  119.9s
+ => => resolve docker.io/library/node:16@sha256:f77a1aef2da8d83e45ec990  0.1s 
+ => => sha256:f77a1aef2da8d83e45ec990f45df50f1a286c5fe8bbfb 776B / 776B  0.0s 
+ => => sha256:c94b82f9827cab6e421b350965a9ef11b25b13ffb 2.00kB / 2.00kB  0.0s 
+ => => sha256:1ddc7e4055fdb6f6bf31063b593befda814294f9f 7.23kB / 7.23kB  0.0s
+ => => sha256:7e9bf114588c05b2df612b083b96582f3b8dbf 17.58MB / 17.58MB  10.1s 
+ => => sha256:ffd9397e94b74abcb54e514f1430e00f604328 51.89MB / 51.89MB  38.1s 
+ => => sha256:311da6c465ea1576925360eba391bcd32dece9 50.50MB / 50.50MB  33.1s
+ => => sha256:513d779256048c961239af5f500589330546 191.90MB / 191.90MB  65.8s
+ => => sha256:ae3b95bbaa61ce24cefdd89e7c74d6fbd7713b2b 4.20kB / 4.20kB  34.0s
+ => => extracting sha256:311da6c465ea1576925360eba391bcd32dece9be95960  25.4s
+ => => sha256:0e421f66aff42bb069dffc26af6d132194b22a 34.79MB / 34.79MB  50.2s
+ => => sha256:ca266fd6192108b67fb57b74753a8c4ca5d8bd45 2.27MB / 2.27MB  39.9s
+ => => sha256:ee7d78be1eb92caf6ae84fc3af736b23eca018d5dedc 450B / 450B  40.4s
+ => => extracting sha256:7e9bf114588c05b2df612b083b96582f3b8dbf51647aa6  3.7s 
+ => => extracting sha256:ffd9397e94b74abcb54e514f1430e00f604328d1f895e  12.8s 
+ => => extracting sha256:513d779256048c961239af5f500589330546b07277521  34.1s 
+ => => extracting sha256:ae3b95bbaa61ce24cefdd89e7c74d6fbd7713b2bcae93a  0.0s 
+ => => extracting sha256:0e421f66aff42bb069dffc26af6d132194b22a1082b08c  6.3s 
+ => => extracting sha256:ca266fd6192108b67fb57b74753a8c4ca5d8bd458baae3  0.3s 
+ => => extracting sha256:ee7d78be1eb92caf6ae84fc3af736b23eca018d5dedc96  0.0s 
+ => [internal] load build context                                        0.3s 
+ => => transferring context: 29.02kB                                     0.2s 
+ => [2/5] WORKDIR /usr/src/app                                           0.4s 
+ => [3/5] COPY package*.json ./                                          0.1s 
+ => ERROR [4/5] RUN npm Install                                          1.8s 
+------
+ > [4/5] RUN npm Install:
+1.665 Unknown command: "Install"
+1.665
+1.665 Did you mean this?
+1.665     npm install # Install a package
+1.665
+1.666 To see a list of supported npm commands, run:
+1.666   npm help
+------
+Dockerfile:10
+--------------------
+   8 |     COPY package*.json ./
+   9 |
+  10 | >>> RUN npm Install
+  11 |     
+  12 |     # Bundle app source
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm Install" did not complete successfully: exit code: 1
+PS C:\Users\Admin\docker_app> docker run -p 5000:9000 ryan/docker-node-app
+Unable to find image 'ryan/docker-node-app:latest' locally
+docker: Error response from daemon: pull access denied for ryan/docker-node-app, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
+PS C:\Users\Admin\docker_app> docker build . -t ryan/docker-node-app      
+[+] Building 0.0s (0/0)  docker:default
+2025/04/15 10:35:58 http2: server: error reading preface from client //./pipe/[+] Building 3.0s (8/9)                                        docker:default
+ => [internal] load build definition from Dockerfile                     0.1s
+ => => transferring dockerfile: 309B                                     0.0s 
+ => [internal] load metadata for docker.io/library/node:16               0.9s 
+ => [internal] load .dockerignore                                        0.1s
+ => => transferring context: 67B                                         0.0s 
+ => [1/5] FROM docker.io/library/node:16@sha256:f77a1aef2da8d83e45ec990  0.0s
+ => [internal] load build context                                        0.2s 
+ => => transferring context: 192B                                        0.1s 
+ => CACHED [2/5] WORKDIR /usr/src/app                                    0.0s
+ => CACHED [3/5] COPY package*.json ./                                   0.0s 
+ => ERROR [4/5] RUN npm Install                                          1.6s 
+------
+ > [4/5] RUN npm Install:
+1.479 Unknown command: "Install"
+1.479 
+1.479 Did you mean this?
+1.479     npm install # Install a package
+1.479
+1.480 To see a list of supported npm commands, run:
+1.480   npm help
+------
+Dockerfile:10
+--------------------
+   8 |     COPY package*.json ./
+   9 |
+  10 | >>> RUN npm Install
+  11 |
+  12 |     # Bundle app source
+--------------------
+ERROR: failed to solve: process "/bin/sh -c npm Install" did not complete successfully: exit code: 1
+PS C:\Users\Admin\docker_app> docker build . -t ryan/docker-node-app
+[+] Building 0.0s (0/0)  docker:default
+2025/04/15 10:36:48 http2: server: error reading preface from client //./pipe/[+] Building 6.3s (10/10) FINISHED                             docker:default
+ => [internal] load build definition from Dockerfile                     0.1s
+ => => transferring dockerfile: 309B                                     0.1s
+ => [internal] load metadata for docker.io/library/node:16               0.6s
+ => [internal] load .dockerignore                                        0.1s
+ => => transferring context: 67B                                         0.0s 
+ => [1/5] FROM docker.io/library/node:16@sha256:f77a1aef2da8d83e45ec990  0.0s 
+ => [internal] load build context                                        0.1s
+ => => transferring context: 473B                                        0.0s 
+ => CACHED [2/5] WORKDIR /usr/src/app                                    0.0s 
+ => CACHED [3/5] COPY package*.json ./                                   0.0s 
+ => [4/5] RUN npm install                                                4.0s 
+ => [5/5] COPY . .                                                       0.2s
+ => exporting to image                                                   0.8s
+ => => exporting layers                                                  0.6s 
+ => => writing image sha256:b429f9e4c23bb18ce737da7cba8310ea5d451941215  0.0s
+ => => naming to docker.io/ryan/docker-node-app                          0.1s 
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+PS C:\Users\Admin\docker_app> docker run -p 5000:9000 ryan/docker-node-app
+Running on http://0.0.0.0:9000
