@@ -1,0 +1,17 @@
+{
+    "name": "static-web-app",
+    "version": "1.0.0",
+    "description": "A static web app using MongoDB and docker",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Ryan Boughton-Shields",
+    "license": "Worldline",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mongoose": "^6.0.12",
+        "body-parser": "^1.19.0"
+    }
+}
