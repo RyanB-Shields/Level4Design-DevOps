@@ -1,0 +1,48 @@
+C:\Users\Admin>mkdir jenkinsLab1
+
+C:\Users\Admin>cd jenkinsLab1
+
+C:\Users\Admin\jenkinsLab1> code .
+
+C:\Users\Admin\jenkinsLab1>docker compose config
+error while interpolating networks.ecommerce-network.external: failed to cast to expected type: invalid boolean: ture
+
+C:\Users\Admin\jenkinsLab1>docker compose config
+name: jenkinslab1
+services:
+  jenkins:
+    container_name: jenkins-docker-container
+    image: jenkins/jenkins:lts
+    networks:
+      ecommerce-network: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "8080"
+        protocol: tcp
+networks:
+  ecommerce-network:
+    name: ecommerce-network
+    external: true
+
+C:\Users\Admin\jenkinsLab1>docker compose up -d
+[+] Running 13/13
+ ✔ jenkins Pulled                                                                                       53.3s
+   ✔ 7cd785773db4 Pull complete                                                                         28.4s
+   ✔ 24f136341396 Pull complete                                                                         44.4s
+   ✔ eda0f76bb036 Pull complete                                                                         44.8s
+   ✔ 11f626deefca Pull complete                                                                         44.9s
+   ✔ ad19a540b348 Pull complete                                                                         45.0s
+   ✔ f14fced4c8a7 Pull complete                                                                         48.1s
+   ✔ 7ea8532cf5e8 Pull complete                                                                         48.2s
+   ✔ 66f3dce14bf3 Pull complete                                                                         48.5s
+   ✔ 1cad615f2162 Pull complete                                                                         50.7s
+   ✔ afd3404ad7b7 Pull complete                                                                         50.8s
+   ✔ a960e590590c Pull complete                                                                         50.9s
+   ✔ 0d1a0d4117af Pull complete                                                                         51.0s
+Error response from daemon: network ecommerce-network not found
+
+C:\Users\Admin\jenkinsLab1>docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\Admin\jenkinsLab1>
