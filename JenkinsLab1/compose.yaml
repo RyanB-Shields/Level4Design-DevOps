@@ -1,0 +1,12 @@
+services:
+  jenkins:
+    container_name: jenkins-docker-container
+    image: jenkins/jenkins:lts
+    ports:
+      - "8080:8080"
+    networks:
+      - ecommerce-network
+networks:
+  ecommerce-network:
+    name: ecommerce-network
+    external: true
