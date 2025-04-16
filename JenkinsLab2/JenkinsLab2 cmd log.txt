@@ -1,0 +1,679 @@
+Microsoft Windows [Version 10.0.22631.3593]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Admin>mkdir JenkinsLab2
+
+C:\Users\Admin>cd JenkinsLab2
+
+C:\Users\Admin\JenkinsLab2>docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
+Unable to find image 'jenkins/jenkins:lts-jdk11' locally
+lts-jdk11: Pulling from jenkins/jenkins
+cdd62bf39133: Pull complete
+21f106ffc421: Pull complete
+39df2c5808cf: Pull complete
+d9d5ad5daae2: Pull complete
+21d9152ebad0: Pull complete
+ddc06df74615: Pull complete
+bf388b3d4868: Pull complete
+1f6fc1ff002b: Pull complete
+6201e887d163: Pull complete
+a3d60a50862f: Pull complete
+282c783b8e01: Pull complete
+ddf03cc24103: Pull complete
+Digest: sha256:6aa6c6bd7da914bf5333305c8102cb26965ea4b227e37f4269315725a2b0cd81
+Status: Downloaded newer image for jenkins/jenkins:lts-jdk11
+Running from: /usr/share/jenkins/jenkins.war
+webroot: /var/jenkins_home/war
+2025-04-16 13:17:44.899+0000 [id=1]     INFO    winstone.Logger#logInternal: Beginning extraction from war file
+2025-04-16 13:18:15.377+0000 [id=1]     WARNING o.e.j.s.handler.ContextHandler#setContextPath: Empty contextPath
+2025-04-16 13:18:18.057+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStart: jetty-10.0.24; built: 2024-08-26T17:58:21.070Z; git: d5384207795da96fad32db8ea8d26b69955bcc03; jvm 11.0.24+8
+2025-04-16 13:18:20.578+0000 [id=1]     INFO    o.e.j.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+2025-04-16 13:18:20.984+0000 [id=1]     INFO    o.e.j.s.s.DefaultSessionIdManager#doStart: Session workerName=node0
+2025-04-16 13:18:25.560+0000 [id=1]     INFO    hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2025-04-16 13:18:28.530+0000 [id=1]     INFO    o.e.j.s.handler.ContextHandler#doStart: Started w.@1b9776f5{Jenkins v2.462.3,/,file:///var/jenkins_home/war/,AVAILABLE}{/var/jenkins_home/war}
+2025-04-16 13:18:28.641+0000 [id=1]     INFO    o.e.j.server.AbstractConnector#doStart: Started ServerConnector@2f4205be{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-04-16 13:18:28.783+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStart: Started Server@4795ded0{STARTING}[10.0.24,sto=0] @46520ms
+2025-04-16 13:18:28.918+0000 [id=24]    INFO    winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2025-04-16 13:18:30.009+0000 [id=32]    INFO    jenkins.InitReactorRunner$1#onAttained: Started initialization
+2025-04-16 13:18:30.153+0000 [id=31]    INFO    jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2025-04-16 13:18:32.712+0000 [id=30]    INFO    jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2025-04-16 13:18:32.734+0000 [id=30]    INFO    jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2025-04-16 13:18:32.761+0000 [id=33]    INFO    jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2025-04-16 13:18:33.532+0000 [id=32]    INFO    jenkins.InitReactorRunner$1#onAttained: System config loaded
+2025-04-16 13:18:33.535+0000 [id=34]    INFO    jenkins.InitReactorRunner$1#onAttained: System config adapted
+2025-04-16 13:18:33.538+0000 [id=33]    INFO    jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2025-04-16 13:18:33.542+0000 [id=33]    INFO    jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2025-04-16 13:18:33.743+0000 [id=50]    INFO    hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.codehaus.groovy.vmplugin.v7.Java7$1 (file:/var/jenkins_home/war/WEB-INF/lib/groovy-all-2.4.21.jar) to constructor java.lang.invoke.MethodHandles$Lookup(java.lang.Class,int)
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.vmplugin.v7.Java7$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2025-04-16 13:18:35.334+0000 [id=32]    INFO    jenkins.install.SetupWizard#init:
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+a4ebd9b519bd401eab016e8207d7f853
+
+This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+2025-04-16 13:18:56.583+0000 [id=31]    INFO    jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2025-04-16 13:18:56.675+0000 [id=23]    INFO    hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+2025-04-16 13:18:57.493+0000 [id=50]    INFO    h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+2025-04-16 13:18:57.495+0000 [id=50]    INFO    hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
+2025-04-16 13:22:01.601+0000 [id=19]    INFO    hudson.PluginManager#install: Starting installation of a batch of 20 plugins plus their dependencies
+2025-04-16 13:22:01.614+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of ionicons-api for plugin cloudbees-folder
+2025-04-16 13:22:01.627+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of ionicons-api on behalf of admin
+2025-04-16 13:22:01.628+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of json-path-api for plugin build-timeout
+2025-04-16 13:22:01.630+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of asm-api for plugin json-path-api
+2025-04-16 13:22:01.630+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of token-macro for plugin build-timeout
+2025-04-16 13:22:01.631+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of structs for plugin token-macro
+2025-04-16 13:22:01.631+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading ionicons-api
+2025-04-16 13:22:01.632+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-step-api for plugin token-macro
+2025-04-16 13:22:01.646+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of plain-credentials for plugin credentials-binding
+2025-04-16 13:22:01.647+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of credentials for plugin plain-credentials
+2025-04-16 13:22:01.648+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of bouncycastle-api for plugin credentials
+2025-04-16 13:22:01.649+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of ssh-credentials for plugin credentials-binding
+2025-04-16 13:22:01.650+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of variant for plugin ssh-credentials
+2025-04-16 13:22:01.651+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-api for plugin timestamper
+2025-04-16 13:22:01.652+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of scm-api for plugin workflow-api
+2025-04-16 13:22:01.652+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of commons-lang3-api for plugin timestamper
+2025-04-16 13:22:01.653+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of matrix-project for plugin ws-cleanup
+2025-04-16 13:22:01.664+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of script-security for plugin matrix-project
+2025-04-16 13:22:01.664+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of caffeine-api for plugin script-security
+2025-04-16 13:22:01.665+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of junit for plugin matrix-project
+2025-04-16 13:22:01.666+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of jackson2-api for plugin junit
+2025-04-16 13:22:01.667+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of jaxb for plugin jackson2-api
+2025-04-16 13:22:01.667+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of javax-activation-api for plugin jaxb
+2025-04-16 13:22:01.678+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of snakeyaml-api for plugin jackson2-api
+2025-04-16 13:22:01.679+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of json-api for plugin jackson2-api
+2025-04-16 13:22:01.679+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of bootstrap5-api for plugin junit
+2025-04-16 13:22:01.680+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of font-awesome-api for plugin bootstrap5-api
+2025-04-16 13:22:01.681+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of commons-text-api for plugin font-awesome-api
+2025-04-16 13:22:01.681+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of plugin-util-api for plugin font-awesome-api
+2025-04-16 13:22:01.682+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-support for plugin plugin-util-api
+2025-04-16 13:22:01.683+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of echarts-api for plugin junit
+2025-04-16 13:22:01.683+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of jquery3-api for plugin echarts-api
+2025-04-16 13:22:01.695+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of display-url-api for plugin junit
+2025-04-16 13:22:01.696+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of checks-api for plugin junit
+2025-04-16 13:22:01.697+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of resource-disposer for plugin ws-cleanup
+2025-04-16 13:22:01.699+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of okhttp-api for plugin gradle
+2025-04-16 13:22:01.699+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-durable-task-step for plugin gradle
+2025-04-16 13:22:01.700+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of durable-task for plugin workflow-durable-task-step
+2025-04-16 13:22:01.711+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-cps for plugin gradle
+2025-04-16 13:22:01.712+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-scm-step for plugin workflow-cps
+2025-04-16 13:22:01.713+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-job for plugin gradle
+2025-04-16 13:22:01.714+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-basic-steps for plugin gradle
+2025-04-16 13:22:01.714+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of jakarta-mail-api for plugin workflow-basic-steps
+2025-04-16 13:22:01.715+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of jakarta-activation-api for plugin jakarta-mail-api
+2025-04-16 13:22:01.715+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of apache-httpcomponents-client-4-api for plugin workflow-basic-steps
+2025-04-16 13:22:01.715+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of mailer for plugin workflow-basic-steps
+2025-04-16 13:22:01.716+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of instance-identity for plugin mailer
+2025-04-16 13:22:01.717+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-milestone-step for plugin workflow-aggregator
+2025-04-16 13:22:01.717+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-build-step for plugin workflow-aggregator
+2025-04-16 13:22:01.718+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-groovy-lib for plugin workflow-aggregator
+2025-04-16 13:22:01.718+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-model-definition for plugin workflow-aggregator
+2025-04-16 13:22:01.732+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-model-extensions for plugin pipeline-model-definition
+2025-04-16 13:22:01.733+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-stage-step for plugin pipeline-model-extensions
+2025-04-16 13:22:01.733+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-model-api for plugin pipeline-model-extensions
+2025-04-16 13:22:01.734+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of joda-time-api for plugin pipeline-model-api
+2025-04-16 13:22:01.735+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of workflow-multibranch for plugin pipeline-model-definition
+2025-04-16 13:22:01.757+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of branch-api for plugin workflow-multibranch
+2025-04-16 13:22:01.758+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-stage-tags-metadata for plugin pipeline-model-definition
+2025-04-16 13:22:01.758+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-input-step for plugin pipeline-model-definition
+2025-04-16 13:22:01.759+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of jjwt-api for plugin github-branch-source
+2025-04-16 13:22:01.772+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of github-api for plugin github-branch-source
+2025-04-16 13:22:01.773+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of github for plugin github-branch-source
+2025-04-16 13:22:01.774+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of git for plugin github
+2025-04-16 13:22:01.775+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of git-client for plugin git
+2025-04-16 13:22:01.776+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of mina-sshd-api-core for plugin git-client
+2025-04-16 13:22:01.776+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of mina-sshd-api-common for plugin mina-sshd-api-core
+2025-04-16 13:22:01.777+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of gson-api for plugin git-client
+2025-04-16 13:22:01.778+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of pipeline-graph-analysis for plugin pipeline-graph-view
+2025-04-16 13:22:01.778+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of metrics for plugin pipeline-graph-view
+2025-04-16 13:22:01.790+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of trilead-api for plugin ssh-slaves
+2025-04-16 13:22:01.792+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of eddsa-api for plugin trilead-api
+2025-04-16 13:22:01.799+0000 [id=19]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of theme-manager for plugin dark-theme
+2025-04-16 13:22:04.563+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: ionicons-api
+2025-04-16 13:22:04.564+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of cloudbees-folder on behalf of admin
+2025-04-16 13:22:04.565+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading cloudbees-folder
+2025-04-16 13:22:05.460+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: cloudbees-folder
+2025-04-16 13:22:05.461+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of antisamy-markup-formatter on behalf of admin
+2025-04-16 13:22:05.461+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading antisamy-markup-formatter
+2025-04-16 13:22:06.461+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: antisamy-markup-formatter
+2025-04-16 13:22:06.461+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of asm-api on behalf of admin
+2025-04-16 13:22:06.462+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading asm-api
+2025-04-16 13:22:07.260+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: asm-api
+2025-04-16 13:22:07.261+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of json-path-api on behalf of admin
+2025-04-16 13:22:07.264+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading json-path-api
+2025-04-16 13:22:08.022+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: json-path-api
+2025-04-16 13:22:08.022+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of structs on behalf of admin
+2025-04-16 13:22:08.023+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading structs
+2025-04-16 13:22:08.745+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: structs
+2025-04-16 13:22:08.746+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-step-api on behalf of admin
+2025-04-16 13:22:08.747+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-step-api
+2025-04-16 13:22:09.467+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-step-api
+2025-04-16 13:22:09.468+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of token-macro on behalf of admin
+2025-04-16 13:22:09.469+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading token-macro
+2025-04-16 13:22:10.362+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: token-macro
+2025-04-16 13:22:10.363+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of build-timeout on behalf of admin
+2025-04-16 13:22:10.363+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading build-timeout
+2025-04-16 13:22:11.118+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: build-timeout
+2025-04-16 13:22:11.119+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of bouncycastle-api on behalf of admin
+2025-04-16 13:22:11.119+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading bouncycastle-api
+2025-04-16 13:22:16.684+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: bouncycastle-api
+2025-04-16 13:22:16.685+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of credentials on behalf of admin
+2025-04-16 13:22:16.685+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading credentials
+2025-04-16 13:22:17.712+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: credentials
+2025-04-16 13:22:17.714+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of plain-credentials on behalf of admin
+2025-04-16 13:22:17.714+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading plain-credentials
+2025-04-16 13:22:18.354+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: plain-credentials
+2025-04-16 13:22:18.355+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of variant on behalf of admin
+2025-04-16 13:22:18.355+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading variant
+2025-04-16 13:22:19.010+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: variant
+2025-04-16 13:22:19.010+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of ssh-credentials on behalf of admin
+2025-04-16 13:22:19.011+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading ssh-credentials
+2025-04-16 13:22:19.764+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: ssh-credentials
+2025-04-16 13:22:19.768+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of credentials-binding on behalf of admin
+2025-04-16 13:22:19.771+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading credentials-binding
+2025-04-16 13:22:20.902+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: credentials-binding
+2025-04-16 13:22:20.903+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of scm-api on behalf of admin
+2025-04-16 13:22:20.906+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading scm-api
+2025-04-16 13:22:21.645+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: scm-api
+2025-04-16 13:22:21.646+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-api on behalf of admin
+2025-04-16 13:22:21.646+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-api
+2025-04-16 13:22:22.373+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-api
+2025-04-16 13:22:22.373+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of commons-lang3-api on behalf of admin
+2025-04-16 13:22:22.374+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading commons-lang3-api
+2025-04-16 13:22:23.178+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: commons-lang3-api
+2025-04-16 13:22:23.179+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of timestamper on behalf of admin
+2025-04-16 13:22:23.180+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading timestamper
+2025-04-16 13:22:23.822+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: timestamper
+2025-04-16 13:22:23.822+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of caffeine-api on behalf of admin
+2025-04-16 13:22:23.822+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading caffeine-api
+2025-04-16 13:22:24.721+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: caffeine-api
+2025-04-16 13:22:24.722+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of script-security on behalf of admin
+2025-04-16 13:22:24.725+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading script-security
+2025-04-16 13:22:25.419+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: script-security
+2025-04-16 13:22:25.419+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of javax-activation-api on behalf of admin
+2025-04-16 13:22:25.420+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading javax-activation-api
+2025-04-16 13:22:26.490+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: javax-activation-api
+2025-04-16 13:22:26.491+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of jaxb on behalf of admin
+2025-04-16 13:22:26.492+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading jaxb
+2025-04-16 13:22:30.599+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: jaxb
+2025-04-16 13:22:31.104+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of snakeyaml-api on behalf of admin
+2025-04-16 13:22:31.430+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading snakeyaml-api
+2025-04-16 13:22:35.695+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: snakeyaml-api
+2025-04-16 13:22:35.695+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of json-api on behalf of admin
+2025-04-16 13:22:35.695+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading json-api
+2025-04-16 13:22:36.448+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: json-api
+2025-04-16 13:22:36.449+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of jackson2-api on behalf of admin
+2025-04-16 13:22:36.449+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading jackson2-api
+2025-04-16 13:22:38.606+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: jackson2-api
+2025-04-16 13:22:38.607+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of commons-text-api on behalf of admin
+2025-04-16 13:22:38.607+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading commons-text-api
+2025-04-16 13:22:39.563+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: commons-text-api
+2025-04-16 13:22:39.566+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-support on behalf of admin
+2025-04-16 13:22:39.571+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-support
+2025-04-16 13:22:40.742+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-support
+2025-04-16 13:22:40.742+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of plugin-util-api on behalf of admin
+2025-04-16 13:22:40.743+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading plugin-util-api
+2025-04-16 13:22:41.645+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: plugin-util-api
+2025-04-16 13:22:41.646+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of font-awesome-api on behalf of admin
+2025-04-16 13:22:41.646+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading font-awesome-api
+2025-04-16 13:22:46.799+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: font-awesome-api
+2025-04-16 13:22:46.800+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of bootstrap5-api on behalf of admin
+2025-04-16 13:22:46.800+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading bootstrap5-api
+2025-04-16 13:22:49.308+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: bootstrap5-api
+2025-04-16 13:22:49.309+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of jquery3-api on behalf of admin
+2025-04-16 13:22:49.309+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading jquery3-api
+2025-04-16 13:22:50.087+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: jquery3-api
+2025-04-16 13:22:50.088+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of echarts-api on behalf of admin
+2025-04-16 13:22:50.089+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading echarts-api
+2025-04-16 13:22:56.300+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: echarts-api
+2025-04-16 13:22:56.304+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of display-url-api on behalf of admin
+2025-04-16 13:22:56.304+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading display-url-api
+2025-04-16 13:22:56.978+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: display-url-api
+2025-04-16 13:22:56.979+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of checks-api on behalf of admin
+2025-04-16 13:22:56.979+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading checks-api
+2025-04-16 13:22:58.060+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: checks-api
+2025-04-16 13:22:58.066+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of junit on behalf of admin
+2025-04-16 13:22:58.067+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading junit
+2025-04-16 13:22:58.870+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: junit
+2025-04-16 13:22:58.871+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of matrix-project on behalf of admin
+2025-04-16 13:22:58.872+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading matrix-project
+2025-04-16 13:22:59.567+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: matrix-project
+2025-04-16 13:22:59.567+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of resource-disposer on behalf of admin
+2025-04-16 13:22:59.568+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading resource-disposer
+2025-04-16 13:23:00.250+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: resource-disposer
+2025-04-16 13:23:00.256+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of ws-cleanup on behalf of admin
+2025-04-16 13:23:00.259+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading ws-cleanup
+2025-04-16 13:23:01.261+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: ws-cleanup
+2025-04-16 13:23:01.262+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of ant on behalf of admin
+2025-04-16 13:23:01.262+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading ant
+2025-04-16 13:23:02.098+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: ant
+2025-04-16 13:23:02.098+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of okhttp-api on behalf of admin
+2025-04-16 13:23:02.099+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading okhttp-api
+2025-04-16 13:23:10.854+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: okhttp-api
+2025-04-16 13:23:11.208+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of durable-task on behalf of admin
+2025-04-16 13:23:11.215+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading durable-task
+2025-04-16 13:23:19.587+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: durable-task
+2025-04-16 13:23:19.587+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-durable-task-step on behalf of admin
+2025-04-16 13:23:19.588+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-durable-task-step
+2025-04-16 13:23:20.336+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-durable-task-step
+2025-04-16 13:23:20.336+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-scm-step on behalf of admin
+2025-04-16 13:23:20.340+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-scm-step
+2025-04-16 13:23:20.972+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-scm-step
+2025-04-16 13:23:20.973+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-cps on behalf of admin
+2025-04-16 13:23:20.973+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-cps
+2025-04-16 13:23:21.875+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-cps
+2025-04-16 13:23:21.878+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-job on behalf of admin
+2025-04-16 13:23:21.879+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-job
+2025-04-16 13:23:22.822+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-job
+2025-04-16 13:23:22.822+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of jakarta-activation-api on behalf of admin
+2025-04-16 13:23:22.822+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading jakarta-activation-api
+2025-04-16 13:23:23.528+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: jakarta-activation-api
+2025-04-16 13:23:23.529+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of jakarta-mail-api on behalf of admin
+2025-04-16 13:23:23.530+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading jakarta-mail-api
+2025-04-16 13:23:24.335+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: jakarta-mail-api
+2025-04-16 13:23:24.335+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of apache-httpcomponents-client-4-api on behalf of admin
+2025-04-16 13:23:24.336+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading apache-httpcomponents-client-4-api
+2025-04-16 13:23:26.540+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: apache-httpcomponents-client-4-api
+2025-04-16 13:23:26.540+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of instance-identity on behalf of admin
+2025-04-16 13:23:26.637+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading instance-identity
+2025-04-16 13:23:27.970+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: instance-identity
+2025-04-16 13:23:27.970+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of mailer on behalf of admin
+2025-04-16 13:23:27.973+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading mailer
+2025-04-16 13:23:28.668+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: mailer
+2025-04-16 13:23:28.668+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-basic-steps on behalf of admin
+2025-04-16 13:23:28.669+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-basic-steps
+2025-04-16 13:23:29.388+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-basic-steps
+2025-04-16 13:23:29.390+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of gradle on behalf of admin
+2025-04-16 13:23:29.390+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading gradle
+2025-04-16 13:23:30.334+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: gradle
+2025-04-16 13:23:30.335+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-milestone-step on behalf of admin
+2025-04-16 13:23:30.335+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-milestone-step
+2025-04-16 13:23:31.129+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-milestone-step
+2025-04-16 13:23:31.129+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-build-step on behalf of admin
+2025-04-16 13:23:31.130+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-build-step
+2025-04-16 13:23:31.829+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-build-step
+2025-04-16 13:23:31.829+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-groovy-lib on behalf of admin
+2025-04-16 13:23:31.830+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-groovy-lib
+2025-04-16 13:23:32.939+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-groovy-lib
+2025-04-16 13:23:32.940+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-stage-step on behalf of admin
+2025-04-16 13:23:32.940+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-stage-step
+2025-04-16 13:23:33.611+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-stage-step
+2025-04-16 13:23:33.611+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of joda-time-api on behalf of admin
+2025-04-16 13:23:33.612+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading joda-time-api
+2025-04-16 13:23:34.355+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: joda-time-api
+2025-04-16 13:23:34.355+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-model-api on behalf of admin
+2025-04-16 13:23:34.358+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-model-api
+2025-04-16 13:23:37.055+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-model-api
+2025-04-16 13:23:37.056+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-model-extensions on behalf of admin
+2025-04-16 13:23:37.056+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-model-extensions
+2025-04-16 13:23:38.792+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-model-extensions
+2025-04-16 13:23:38.793+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of branch-api on behalf of admin
+2025-04-16 13:23:38.793+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading branch-api
+2025-04-16 13:23:40.275+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: branch-api
+2025-04-16 13:23:40.275+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-multibranch on behalf of admin
+2025-04-16 13:23:40.275+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-multibranch
+2025-04-16 13:23:41.190+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-multibranch
+2025-04-16 13:23:41.191+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-stage-tags-metadata on behalf of admin
+2025-04-16 13:23:41.191+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-stage-tags-metadata
+2025-04-16 13:23:41.961+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-stage-tags-metadata
+2025-04-16 13:23:41.961+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-input-step on behalf of admin
+2025-04-16 13:23:41.962+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-input-step
+2025-04-16 13:23:42.700+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-input-step
+2025-04-16 13:23:42.701+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-model-definition on behalf of admin
+2025-04-16 13:23:42.701+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-model-definition
+2025-04-16 13:23:43.964+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-model-definition
+2025-04-16 13:23:43.965+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of workflow-aggregator on behalf of admin
+2025-04-16 13:23:43.965+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading workflow-aggregator
+2025-04-16 13:23:44.597+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: workflow-aggregator
+2025-04-16 13:23:44.598+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of jjwt-api on behalf of admin
+2025-04-16 13:23:44.598+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading jjwt-api
+2025-04-16 13:23:46.683+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: jjwt-api
+2025-04-16 13:23:46.683+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of github-api on behalf of admin
+2025-04-16 13:23:46.684+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading github-api
+2025-04-16 13:23:47.939+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: github-api
+2025-04-16 13:23:47.940+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of mina-sshd-api-common on behalf of admin
+2025-04-16 13:23:47.940+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading mina-sshd-api-common
+2025-04-16 13:23:48.787+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: mina-sshd-api-common
+2025-04-16 13:23:48.787+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of mina-sshd-api-core on behalf of admin
+2025-04-16 13:23:48.787+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading mina-sshd-api-core
+2025-04-16 13:23:50.332+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: mina-sshd-api-core
+2025-04-16 13:23:50.332+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of gson-api on behalf of admin
+2025-04-16 13:23:50.332+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading gson-api
+2025-04-16 13:23:51.068+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: gson-api
+2025-04-16 13:23:51.068+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of git-client on behalf of admin
+2025-04-16 13:23:51.068+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading git-client
+2025-04-16 13:23:53.242+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: git-client
+2025-04-16 13:23:53.242+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of git on behalf of admin
+2025-04-16 13:23:53.242+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading git
+2025-04-16 13:23:54.108+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: git
+2025-04-16 13:23:54.108+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of github on behalf of admin
+2025-04-16 13:23:54.108+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading github
+2025-04-16 13:23:55.012+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: github
+2025-04-16 13:23:55.014+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of github-branch-source on behalf of admin
+2025-04-16 13:23:55.015+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading github-branch-source
+2025-04-16 13:24:00.091+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: github-branch-source
+2025-04-16 13:24:00.092+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-github-lib on behalf of admin
+2025-04-16 13:24:00.092+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-github-lib
+2025-04-16 13:24:01.814+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-github-lib
+2025-04-16 13:24:01.815+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-graph-analysis on behalf of admin
+2025-04-16 13:24:01.815+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-graph-analysis
+2025-04-16 13:24:02.641+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-graph-analysis
+2025-04-16 13:24:02.641+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of metrics on behalf of admin
+2025-04-16 13:24:02.642+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading metrics
+2025-04-16 13:24:03.773+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: metrics
+2025-04-16 13:24:03.774+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of pipeline-graph-view on behalf of admin
+2025-04-16 13:24:03.774+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pipeline-graph-view
+2025-04-16 13:24:05.184+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: pipeline-graph-view
+2025-04-16 13:24:05.184+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of git on behalf of admin
+2025-04-16 13:24:05.185+0000 [id=90]    INFO    h.m.UpdateCenter$InstallationJob#_run: Skipping duplicate install of: Git@5.5.2
+2025-04-16 13:24:05.185+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: git
+2025-04-16 13:24:05.186+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of eddsa-api on behalf of admin
+2025-04-16 13:24:05.186+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading eddsa-api
+2025-04-16 13:24:05.937+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: eddsa-api
+2025-04-16 13:24:05.937+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of trilead-api on behalf of admin
+2025-04-16 13:24:05.941+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading trilead-api
+2025-04-16 13:24:07.369+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: trilead-api
+2025-04-16 13:24:07.370+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of ssh-slaves on behalf of admin
+2025-04-16 13:24:07.371+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading ssh-slaves
+2025-04-16 13:24:08.129+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: ssh-slaves
+2025-04-16 13:24:08.130+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of matrix-auth on behalf of admin
+2025-04-16 13:24:08.133+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading matrix-auth
+2025-04-16 13:24:08.920+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: matrix-auth
+2025-04-16 13:24:08.920+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of pam-auth on behalf of admin
+2025-04-16 13:24:08.920+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading pam-auth
+2025-04-16 13:24:09.695+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: pam-auth
+2025-04-16 13:24:09.696+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of ldap on behalf of admin
+2025-04-16 13:24:09.696+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading ldap
+2025-04-16 13:24:11.694+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: ldap
+2025-04-16 13:24:11.695+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of email-ext on behalf of admin
+2025-04-16 13:24:11.695+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading email-ext
+2025-04-16 13:24:12.976+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: email-ext
+2025-04-16 13:24:12.976+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of mailer on behalf of admin
+2025-04-16 13:24:12.976+0000 [id=90]    INFO    h.m.UpdateCenter$InstallationJob#_run: Skipping duplicate install of: Mailer@488.v0c9639c1a_eb_3
+2025-04-16 13:24:12.977+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: mailer
+2025-04-16 13:24:12.977+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of theme-manager on behalf of admin
+2025-04-16 13:24:12.978+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading theme-manager
+2025-04-16 13:24:13.697+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: theme-manager
+2025-04-16 13:24:13.697+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of dark-theme on behalf of admin
+2025-04-16 13:24:13.698+0000 [id=90]    INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading dark-theme
+2025-04-16 13:24:14.383+0000 [id=90]    INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: dark-theme
+2025-04-16 13:24:14.383+0000 [id=90]    INFO    h.m.UpdateCenter$CompleteBatchJob#run: Completing installing of plugin batch…
+2025-04-16 13:24:19.698+0000 [id=90]    INFO    h.p.b.g.GlobalTimeOutConfiguration#load: global timeout not set
+2025-04-16 13:24:20.854+0000 [id=90]    INFO    h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Ant.AntInstaller
+2025-04-16 13:24:22.237+0000 [id=90]    INFO    h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.plugins.gradle.GradleInstaller
+2025-04-16 13:24:22.917+0000 [id=286]   INFO    jenkins.InitReactorRunner$1#onAttained: Started initialization
+2025-04-16 13:24:22.928+0000 [id=287]   INFO    jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2025-04-16 13:24:22.929+0000 [id=287]   INFO    jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2025-04-16 13:24:23.069+0000 [id=291]   INFO    jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2025-04-16 13:24:23.089+0000 [id=289]   INFO    jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2025-04-16 13:24:23.100+0000 [id=292]   INFO    jenkins.InitReactorRunner$1#onAttained: System config loaded
+2025-04-16 13:24:23.101+0000 [id=292]   INFO    jenkins.InitReactorRunner$1#onAttained: System config adapted
+2025-04-16 13:24:23.244+0000 [id=293]   INFO    jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2025-04-16 13:24:23.245+0000 [id=292]   INFO    jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2025-04-16 13:24:24.208+0000 [id=286]   INFO    jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2025-04-16 13:24:24.210+0000 [id=90]    INFO    h.m.UpdateCenter$CompleteBatchJob#run: Completed installation of 88 plugins in 2 min 22 sec
+2025-04-16 13:35:54.167+0000 [id=16]    INFO    hudson.PluginManager#install: Starting installation of a batch of 1 plugins plus their dependencies
+2025-04-16 13:35:54.173+0000 [id=16]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of javadoc for plugin maven-plugin
+2025-04-16 13:35:54.175+0000 [id=16]    INFO    hudson.model.UpdateSite$Plugin#deploy: Adding dependent install of jsch for plugin maven-plugin
+2025-04-16 13:35:54.176+0000 [id=344]   INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of javadoc on behalf of admin
+2025-04-16 13:35:54.182+0000 [id=344]   INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading javadoc
+2025-04-16 13:35:55.117+0000 [id=344]   INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: javadoc
+2025-04-16 13:35:55.117+0000 [id=344]   INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of jsch on behalf of admin
+2025-04-16 13:35:55.118+0000 [id=344]   INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading jsch
+2025-04-16 13:35:56.314+0000 [id=344]   INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: jsch
+2025-04-16 13:35:56.314+0000 [id=344]   INFO    h.model.UpdateCenter$DownloadJob#run: Starting the installation of maven-plugin on behalf of admin
+2025-04-16 13:35:56.315+0000 [id=344]   INFO    h.m.UpdateCenter$UpdateCenterConfiguration#download: Downloading maven-plugin
+2025-04-16 13:35:59.062+0000 [id=344]   INFO    h.model.UpdateCenter$DownloadJob#run: Installation successful: maven-plugin
+2025-04-16 13:35:59.063+0000 [id=344]   INFO    h.m.UpdateCenter$CompleteBatchJob#run: Completing installing of plugin batch…
+2025-04-16 13:35:59.064+0000 [id=344]   INFO    hudson.ClassicPluginStrategy#updateDependency: Updated dependency of gradle
+2025-04-16 13:35:59.702+0000 [id=354]   INFO    jenkins.InitReactorRunner$1#onAttained: Started initialization
+2025-04-16 13:35:59.709+0000 [id=358]   INFO    jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2025-04-16 13:35:59.719+0000 [id=355]   INFO    jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2025-04-16 13:35:59.721+0000 [id=358]   INFO    jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2025-04-16 13:35:59.723+0000 [id=358]   INFO    jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2025-04-16 13:35:59.723+0000 [id=358]   INFO    jenkins.InitReactorRunner$1#onAttained: System config loaded
+2025-04-16 13:35:59.724+0000 [id=358]   INFO    jenkins.InitReactorRunner$1#onAttained: System config adapted
+2025-04-16 13:35:59.724+0000 [id=358]   INFO    jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2025-04-16 13:35:59.724+0000 [id=358]   INFO    jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2025-04-16 13:35:59.724+0000 [id=358]   INFO    jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2025-04-16 13:35:59.726+0000 [id=344]   INFO    h.m.UpdateCenter$CompleteBatchJob#run: Completed installation of 3 plugins in 5.5 sec
+2025-04-16 13:36:11.962+0000 [id=18]    INFO    hudson.model.UpdateCenter#doSafeRestart: Scheduling Jenkins reboot
+2025-04-16 13:36:11.983+0000 [id=363]   INFO    hudson.lifecycle.Lifecycle#onStatusUpdate: Restart in 10 seconds
+2025-04-16 13:36:21.986+0000 [id=363]   INFO    hudson.lifecycle.Lifecycle#onStop: Stopping Jenkins as requested by admin
+2025-04-16 13:36:22.001+0000 [id=363]   INFO    hudson.lifecycle.Lifecycle#onStatusUpdate: Stopping Jenkins
+2025-04-16 13:36:22.047+0000 [id=363]   INFO    jenkins.model.Jenkins$16#onAttained: Started termination
+2025-04-16 13:36:22.118+0000 [id=363]   INFO    h.p.b.global.Lifecycle#shutdown: Shutdown complete - Global TimeOut ScheduledExecutorService had 0 tasks pending
+2025-04-16 13:36:22.128+0000 [id=363]   INFO    jenkins.model.Jenkins$16#onAttained: Completed termination
+2025-04-16 13:36:22.129+0000 [id=363]   INFO    jenkins.model.Jenkins#_cleanUpDisconnectComputers: Starting node disconnection
+2025-04-16 13:36:22.221+0000 [id=363]   INFO    jenkins.model.Jenkins#_cleanUpShutdownPluginManager: Stopping plugin manager
+2025-04-16 13:36:22.265+0000 [id=363]   INFO    jenkins.model.Jenkins#_cleanUpPersistQueue: Persisting build queue
+2025-04-16 13:36:22.282+0000 [id=363]   INFO    jenkins.model.Jenkins#_cleanUpAwaitDisconnects: Waiting for node disconnection completion
+2025-04-16 13:36:22.282+0000 [id=363]   INFO    hudson.lifecycle.Lifecycle#onStatusUpdate: Jenkins stopped
+2025-04-16 13:36:22.284+0000 [id=25]    INFO    winstone.Logger#logInternal: JVM is terminating. Shutting down Jetty
+2025-04-16 13:36:22.285+0000 [id=25]    INFO    org.eclipse.jetty.server.Server#doStop: Stopped Server@4795ded0{STOPPING}[10.0.24,sto=0]
+2025-04-16 13:36:22.307+0000 [id=25]    INFO    o.e.j.server.AbstractConnector#doStop: Stopped ServerConnector@2f4205be{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-04-16 13:36:22.321+0000 [id=25]    INFO    o.e.j.s.handler.ContextHandler#doStop: Stopped w.@1b9776f5{Jenkins v2.462.3,/,null,STOPPED}{/var/jenkins_home/war}
+
+C:\Users\Admin\JenkinsLab2>docker start
+"docker start" requires at least 1 argument.
+See 'docker start --help'.
+
+Usage:  docker start [OPTIONS] CONTAINER [CONTAINER...]
+
+Start one or more stopped containers
+
+C:\Users\Admin\JenkinsLab2>docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\Admin\JenkinsLab2>docker ps -a
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS
+  PORTS     NAMES
+1dde07e13e1f   jenkins/jenkins:lts-jdk11   "/usr/bin/tini -- /u…"   20 minutes ago   Exited (5) 2 minutes ago             quizzical_panini
+
+C:\Users\Admin\JenkinsLab2>docker start 1dde07e13e1f
+1dde07e13e1f
+
+C:\Users\Admin\JenkinsLab2>cd calculator-jenkins
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins> git init
+Initialized empty Git repository in C:/Users/Admin/JenkinsLab2/calculator-jenkins/.git/
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git add .
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git comit -m "Initial commit"
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git commit -m "Initial commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Admin@MIS.(none)')
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git config --global user.name "RyanB-Shields"
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git config --global user.email "ryan.boughtonsheilds@gmail.com"
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git commit -m "Initial commit"
+[master (root-commit) fa464a2] Initial commit
+ 7 files changed, 239 insertions(+)
+ create mode 100644 calculator-jenkins/.classpath
+ create mode 100644 calculator-jenkins/.gitignore
+ create mode 100644 calculator-jenkins/.project
+ create mode 100644 calculator-jenkins/pom.xml
+ create mode 100644 calculator-jenkins/src/main/java/com/agile/calculator/Calculator.java
+ create mode 100644 calculator-jenkins/src/main/java/com/agile/utils/Utils.java
+ create mode 100644 calculator-jenkins/src/test/java/com/agile/calculator/CalculatorTest.java
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git branch -M main
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git remote add origin https://github.com/RyanB-Shields/calculator-Jenkins.git
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git push -u origin main
+info: please complete authentication in your browser...
+To https://github.com/RyanB-Shields/calculator-Jenkins.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/RyanB-Shields/calculator-Jenkins.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git push -u origin main
+To https://github.com/RyanB-Shields/calculator-Jenkins.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/RyanB-Shields/calculator-Jenkins.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git pull -u origin main
+error: unknown switch `u'
+usage: git pull [<options>] [<repository> [<refspec>...]]
+
+    -v, --[no-]verbose    be more verbose
+    -q, --[no-]quiet      be more quiet
+    --[no-]progress       force progress reporting
+    --[no-]recurse-submodules[=<on-demand>]
+                          control for recursive fetching of submodules
+
+Options related to merging
+    -r, --[no-]rebase[=(false|true|merges|interactive)]
+                          incorporate changes by rebasing rather than merging
+    -n                    do not show a diffstat at the end of the merge
+    --[no-]stat           show a diffstat at the end of the merge
+    --[no-]log[=<n>]      add (at most <n>) entries from shortlog to merge commit message
+    --[no-]signoff[=...]  add a Signed-off-by trailer
+    --[no-]squash         create a single commit instead of doing a merge
+    --[no-]commit         perform a commit if the merge succeeds (default)
+    --[no-]edit           edit message before committing
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    --[no-]ff             allow fast-forward
+    --ff-only             abort if fast-forward is not possible
+    --[no-]verify         control use of pre-merge-commit and commit-msg hooks
+    --[no-]verify-signatures
+                          verify that the named commit has a valid GPG signature
+    --[no-]autostash      automatically stash/stash pop before and after
+    -s, --[no-]strategy <strategy>
+                          merge strategy to use
+    -X, --[no-]strategy-option <option=value>
+                          option for selected merge strategy
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit
+    --[no-]allow-unrelated-histories
+                          allow merging unrelated histories
+
+Options related to fetching
+    --[no-]all            fetch from all remotes
+    -a, --[no-]append     append to .git/FETCH_HEAD instead of overwriting
+    --[no-]upload-pack <path>
+                          path to upload pack on remote end
+    -f, --[no-]force      force overwrite of local branch
+    -t, --[no-]tags       fetch all tags and associated objects
+    -p, --[no-]prune      prune remote-tracking branches no longer on remote
+    -j, --[no-]jobs[=<n>] number of submodules pulled in parallel
+    --[no-]dry-run        dry run
+    -k, --[no-]keep       keep downloaded pack
+    --[no-]depth <depth>  deepen history of shallow clone
+    --[no-]shallow-since <time>
+                          deepen history of shallow repository based on time
+    --[no-]shallow-exclude <revision>
+                          deepen history of shallow clone, excluding rev
+    --[no-]deepen <n>     deepen history of shallow clone
+    --unshallow           convert to a complete repository
+    --[no-]update-shallow accept refs that update .git/shallow
+    --refmap <refmap>     specify fetch refmap
+    -o, --[no-]server-option <server-specific>
+                          option to transmit
+    -4, --[no-]ipv4       use IPv4 addresses only
+    -6, --[no-]ipv6       use IPv6 addresses only
+    --[no-]negotiation-tip <revision>
+                          report that we have only objects reachable from this object
+    --[no-]show-forced-updates
+                          check for forced-updates on all updated branches
+    --[no-]set-upstream   set upstream for git pull/fetch
+
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git pull
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 883 bytes | 10.00 KiB/s, done.
+From https://github.com/RyanB-Shields/calculator-Jenkins
+ * [new branch]      main       -> origin/main
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> main
+
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git remote add origin https://github.com/RyanB-Shields/calculator-Jenkins.git
+error: remote origin already exists.
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git push -u origin main
+To https://github.com/RyanB-Shields/calculator-Jenkins.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/RyanB-Shields/calculator-Jenkins.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git pull
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (6/6), 2.00 KiB | 82.00 KiB/s, done.
+From https://github.com/RyanB-Shields/calculator-Jenkins
+   f4e6eac..5a573cd  main       -> origin/main
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> main
+
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git branch --set-upstream-to=origin/main
+branch 'main' set up to track 'origin/main'.
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>git pull
+fatal: refusing to merge unrelated histories
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>cd */src/test/java/com/agile/calculator/
+The system cannot find the path specified.
+
+C:\Users\Admin\JenkinsLab2\calculator-jenkins>
